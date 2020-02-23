@@ -1,16 +1,10 @@
 package money;
 
-public class Doller {
-    int amount;
-    Doller(int amount) {
-        this.amount = amount;
+class Doller extends Money {
+    Doller(int amount, String currency) {
+        super(amount, currency);
     }
-    Doller times(int multiplier) {
-        return new Doller(amount * multiplier);
-    }
-    @Override
-    public boolean equals(Object object) {
-        Doller doller = (Doller) object;
-        return amount == doller.amount;
+    Money times(int multiplier) {
+        return Money.doller(amount * multiplier);
     }
 }
